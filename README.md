@@ -101,7 +101,7 @@ For full options, see [lib/advertise/parse-options.js](lib/advertise/parse-optio
 
 ### Integrate with existing HTTP servers
 
-By default when you create an advertisment an HTTP server is created to serve the `details.xml` document that describes your service.  To use an existing server instead, do something like:
+By default when you create an advertisement an HTTP server is created to serve the `details.xml` document that describes your service.  To use an existing server instead, do something like:
 
 #### Hapi
 

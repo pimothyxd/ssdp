@@ -75,7 +75,7 @@ export interface Service<DeviceDescription = Record<string, any>> {
   uniqueServiceName: string
 }
 
-export interface Advertisment {
+export interface Advertisement {
   usn: string
   details: Record<string, any> | (() => Promise<Record<string, any>>)
 }
@@ -104,7 +104,7 @@ export interface SSDP {
   start: () => Promise<void>
   stop: () => Promise<void>
 
-  advertise: (advert: Advertisment) => Promise<CachedAdvert>
+  advertise: (advert: Advertisement) => Promise<CachedAdvert>
   discover: <Details = Record<string, any>> (serviceType?: string) => AsyncIterable<Service<Details>>
 
   // events
@@ -167,7 +167,7 @@ class SSDPImpl extends EventEmitter implements SSDP {
     this.abortController.abort()
   }
 
-  async advertise (advert: Advertisment): Promise<CachedAdvert> {
+  async advertise (advert: Advertisement): Promise<CachedAdvert> {
     return advertise(this, advert)
   }
 
